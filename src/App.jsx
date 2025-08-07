@@ -7,12 +7,11 @@ import Project from './components/Project';
 function App() {
   return (
     <>
-      <div className="container grid grid-cols-12 h-screen grid-rows-1 flex-nowrap">
+      <div className="container grid grid-cols-12 min-h-screen grid-rows-1 flex-nowrap">
         <Sidebar />
         <Project />
         {/* <EmptyPage /> */}
         {/* <AddProject /> */}
-
       </div>
     </>
   );
