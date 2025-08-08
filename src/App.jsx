@@ -53,7 +53,7 @@ function App() {
 
         { !addProject && projects.length === 0 && <EmptyPage onAddProject={() => setAddProject(true)} /> }
         { !addProject && projects.length > 0 && <Project project={projects[selectedProject]} />}
-        { addProject && <AddProject projects={projects} /> }
+        { addProject && <AddProject projects={projects} onCancel={() => setAddProject(false)} /> }
       </div>
     </>
   );
