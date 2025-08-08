@@ -102,16 +102,6 @@ management-app/
 └── vite.config.js
 ```
 
-## 🎨 Screenshots
-
-### Main Dashboard
-![Main Dashboard](public/image.png)
-*The clean, organized interface makes it easy to manage your projects and tasks.*
-
-### Project Management
-![Project Management](public/logo.png)
-*Simple interface for creating and managing projects with all necessary details.*
-
 ## 🤝 Contributing
 
 Contributions are welcome! Here's how you can help:
