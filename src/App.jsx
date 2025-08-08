@@ -6,31 +6,7 @@ import Project from './components/Project';
 import { useState } from 'react';
 
 const projects = [
-  {
-    name: "Project 1",
-    description: "Description for Project 1",
-    date: "2023-10-01",
-    tasks: []
-  },
-  {
-    name: "Project 2",
-    description: "Description for Project 2",
-    date: "2023-10-02",
-    tasks: [
-      "Clean up the codebase",
-      "Add unit tests",
-      "Update documentation"
-    ]
-  },
-  {    name: "Project 3",
-    description: "Description for Project 3",
-    date: "2023-10-03",
-    tasks: [
-      "Implement new feature",
-      "Fix bugs",
-      "Review pull requests"
-    ]
-  }
+  
 ]
 
 function deleteProject(index) {
@@ -62,6 +38,7 @@ function App() {
 
         { !addProject && projects.length > 0 && 
           <Project 
+            key={selectedProject}
             project={projects[selectedProject]} 
             onDelete={() => {
               deleteProject(selectedProject); 
