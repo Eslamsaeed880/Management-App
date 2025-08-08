@@ -65,13 +65,9 @@ function App() {
             project={projects[selectedProject]} 
             onDelete={() => {
               deleteProject(selectedProject); 
-              setSelectedProject(selectedProject - 1);
-              if (projects.length === 0) {
-                setAddProject(true);
-              }
-              if(projects.length > 0 && selectedProject === 0) {
-                setSelectedProject(projects.length - 1);
-              }
+              selectedProject ? 
+                setSelectedProject(selectedProject - 1) 
+                : setAddProject(true);
             }} 
           /> 
         }
