@@ -33,6 +33,9 @@ const projects = [
   }
 ]
 
+function deleteProject(index) {
+  projects.splice(index, 1);
+}
 
 
 function App() {
@@ -51,9 +54,39 @@ function App() {
           projects={projects} 
         />
 
-        { !addProject && projects.length === 0 && <EmptyPage onAddProject={() => setAddProject(true)} /> }
-        { !addProject && projects.length > 0 && <Project project={projects[selectedProject]} />}
-        { addProject && <AddProject projects={projects} onCancel={() => setAddProject(false)} /> }
+        { !addProject && projects.length === 0 && 
+          <EmptyPage 
+            onAddProject={() => setAddProject(true)} 
+          /> 
+        }
+
+        { !addProject && projects.length > 0 && 
+          <Project 
+            project={projects[selectedProject]} 
+            onDelete={() => {
+              deleteProject(selectedProject); 
+              setSelectedProject(selectedProject - 1);
+              if (projects.length === 0) {
+                setAddProject(true);
+              }
+              if(projects.length > 0 && selectedProject === 0) {
+                setSelectedProject(projects.length - 1);
+              }
+            }} 
+          /> 
+        }
+
+        { addProject && 
+          <AddProject 
+            projects={projects} 
+            onCancel={() => setAddProject(false)}
+            onAddProject={(newProject) => {
+              projects.push(newProject);
+              setAddProject(false);
+              setSelectedProject(projects.length - 1);
+            }} 
+          /> 
+        }
       </div>
     </>
   );

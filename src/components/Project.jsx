@@ -1,11 +1,11 @@
 
-export default function Project({ project }) {
+export default function Project({ project, onDelete }) {
 
     return (
         <div className="main-content col-span-9 flex flex-col gap-4 bg-gray-100 p-16 pr-40">
           <div className="flex justify-between">
             <h2 className='font-bold text-4xl'>{project.name}</h2>
-            <button className="hover:text-red-500">Delete</button>
+            <button onClick={onDelete} className="hover:text-red-500">Delete</button>
           </div>
           <p className="date">Due date: <span className="font-bold">{project.date}</span></p>
           <p>{project.description}</p>
@@ -23,10 +23,10 @@ export default function Project({ project }) {
               { project.tasks.map((task, index) => {
                 return (
                   <>
-                    <div className="task flex justify-between items-center mb-2" key={index}>
+                    <li className="task flex justify-between items-center mb-2" key={index}>
                       <span>{task}</span>
                       <button className='hover:text-red-500'>Clear</button>
-                    </div>
+                    </li>
                     { index < project.tasks.length - 1 && <hr className='border-t border-gray-300 border-b'/> }
                   </>
                 );

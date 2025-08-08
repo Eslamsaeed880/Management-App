@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-export default function AddProject({ projects, onCancel }) {
+export default function AddProject({ projects, onCancel, onAddProject }) {
   const formData = useRef();
   const [validationError, setValidationError] = useState('');
 
@@ -13,14 +13,15 @@ export default function AddProject({ projects, onCancel }) {
     }
 
     setValidationError('');
-    
+
     const newProject = {
       name: form.title.value,
       description: form.description.value,
       date: form['due-date'].value,
       tasks: []
     };
-    projects.push(newProject);
+    
+    onAddProject(newProject);
     form.reset();
   };
 
