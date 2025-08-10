@@ -3,6 +3,9 @@
 A modern, intuitive project management application built with React and Tailwind CSS. Organize your projects, manage tasks, and boost your productivity with this sleek and responsive web application.
 
 ## 📷 Project Preview
+### 🌐 Live Demo
+
+[Check out the live app here!](https://management-app-ky5q.vercel.app/)
 
 ![Management App Interface](public/image.png)
 
